@@ -69,7 +69,7 @@ async function getLogs(firstDate, secondDate){
 
 function getWeeks(){
     const date = new Date('2020-09-20')
-    const endDate = new Date('2020-09-01')
+    const endDate = new Date('2019-07-20')
     let dateString = date.toISOString()
     let weeks= []
     while(endDate <= date){
