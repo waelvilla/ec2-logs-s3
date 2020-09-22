@@ -67,3 +67,39 @@ async function run(){
         console.log('ran at', new Date())
     });
 })()
+
+
+function setDate(date){
+    return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} 00:00:00`
+}
+
+function getWeeks(){
+    const date = new Date('2020-09-20')
+    const endDate = new Date('2019-07-20')
+    let dateString = date.toISOString()
+    let weeks= []
+    while(endDate <= date){
+        let tmpDate = new Date(dateString)
+        tmpDate.setDate(date.getDate()-7)
+        var obj = {
+            start: tmpDate,
+            end: dateString
+        }
+        weeks.push(obj)
+        date.setDate(date.getDate()-7)
+        dateString= date.toISOString()
+    }
+    return weeks
+}
+
+function runner(){
+    let weeks = getWeeks()
+    for(const week of weeks){
+       const name = new Date()
+       fs.unlink(`./file-${name.getFullYear()}-${name.getMonth()}-${name.getDate()}--${name.getFullYear()}-${name.getMonth()}-${name.getDate()}.txt`, (err) => {
+            console.log('err', err);
+       });
+        week.start
+        week.end
+    }
+}
