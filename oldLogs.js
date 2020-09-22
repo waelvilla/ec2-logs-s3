@@ -45,8 +45,8 @@ function setDateText(date){
 
 async function getLogs(firstDate, secondDate){
     return new Promise((resolve, reject) => {
-        const firstText = setDate(firstDate)
-        const secondText = setDate(secondDate)
+        const firstText = setDateText(firstDate)
+        const secondText = setDateText(secondDate)
         // const fileFirstText = setDateText(firstDate)
         const fileFirstText = firstDate.toISOString()
         // const fileSecondText = setDateText(secondDate)
